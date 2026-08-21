@@ -5,12 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>City Mall - Home</title>
     <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f4ede0;   /* cream background */
+            color: #1c0d14;              /* dark text */
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
         .ticker{
             background-color: #1c0d14;
             color: #e4cf9a;
             font-size: 13px;
             padding: 8px;
             text-align: center;   
+        }
+        nav{
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .logo{
+            color: #f4ede0;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span{
+            color: #c9a24b;
+
+        }
+        header{
+            background-color: #2b0f1e;
+            padding: 15px 30px;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        nav ul{
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a{
+            color: #e4cf9a;
+            font-size: 14px;
+        }
+        nav ul li a:hover{
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        nav ul li a.active{
+            color: #ffffff;
+            font-weight: bold;
+
+
+        }
+        
+        /* GENERAL SECTION SPACING */
+        section {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 50px 20px;
+        }
+        
+        .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+        }
+        
+        .section-head h2 {
+        color: #2b0f1e;
+        font-size: 28px;
+        }
+        
+        .section-head a {
+        font-size: 13px;
+        color: #1f5c53;
+        border: 1px solid #1f5c53;
+        padding: 6px 12px;
+        border-radius: 3px;
         }
     </style>
 </head>
@@ -22,13 +109,13 @@
         <nav>
             <div class="logo">CITY <span> MALL </span></div>
             <ul>
-                <li><a href="events.html">Home</a></li>
-                <li><a href="events.html">Shops</a></li>
-                <li><a href="events.html" class="active">Events</a></li>
-                <li><a href="events.html">Offers</a></li>
-                <li><a href="events.html">Posters</a></li>
-                <li><a href="events.html">About Us</a></li>
-                <li><a href="events.html">Contact</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Shops</a></li>
+                <li><a href="index.html">Events</a></li>
+                <li><a href="index.html">Offers</a></li>
+                <li><a href="index.html">Posters</a></li>
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="index.html">Contact</a></li>
             </ul>
         </nav>
     </header>
