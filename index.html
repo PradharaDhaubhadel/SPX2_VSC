@@ -174,6 +174,86 @@
         font-size: 11px;
         text-transform: uppercase;
         }
+
+        /* ITEM FINDER (search box) */
+        .finder {
+        background-color: #2b0f1e;
+        color: #f4ede0;
+        padding: 30px;
+        border-radius: 5px;
+        }
+        
+        .finder h2 {
+        margin-bottom: 5px;
+        }
+        
+        .finder p {
+        color: #c9b8a8;
+        font-size: 14px;
+        margin-bottom: 20px;
+        }
+        
+        #itemSearch {
+        width: 100%;
+        max-width: 400px;
+        padding: 12px;
+        font-size: 15px;
+        border: 1px solid #c9a24b;
+        border-radius: 3px;
+        background-color: #3a1528;
+        color: #f4ede0;
+        box-sizing: border-box;
+        }
+        
+        .chip-row {
+        margin-top: 15px;
+        }
+        
+        .chip {
+        background: none;
+        border: 1px solid #c9a24b;
+        color: #e4cf9a;
+        font-size: 12px;
+        padding: 6px 12px;
+        border-radius: 15px;
+        margin: 4px 4px 0 0;
+        cursor: pointer;
+        }
+        
+        .chip:hover {
+        background-color: #c9a24b;
+        color: #2b0f1e;
+        }
+        
+        #finderResults {
+        margin-top: 20px;
+        }
+        
+        .result-row {
+        background-color: rgba(244,237,224,.08);
+        border: 1px solid rgba(201,162,75,.3);
+        padding: 12px 16px;
+        border-radius: 3px;
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        }
+        
+        .result-row .shopname {
+        font-weight: bold;
+        }
+        
+        .result-row .cat {
+        font-size: 12px;
+        color: #c9a24b;
+        text-transform: uppercase;
+        }
+        
+        .finder-empty {
+        color: #9a8878;
+        font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -210,6 +290,19 @@
             <div><span class="num">12</span><span class="lbl">Categories</span></div>
             <div><span class="num">8</span><span class="lbl">Live offers</span></div>
             </div>
+        </div>
+    </section>
+    <!-- ============ ITEM FINDER (SEARCH) ============ -->
+    <section>
+        <div class="finder">
+            <h2>What are you looking for?</h2>
+            <p>Type an item - "sneakers", "gold ring", "treadmill" - and see which shops carry it.</p>
+        
+            <input type="text" id="itemSearch" placeholder="Try 'necklace' or 'popcorn'...">
+        
+            <div class="chip-row" id="chipRow"></div>
+        
+            <div id="finderResults"></div>
         </div>
     </section>
 </body>
