@@ -168,6 +168,16 @@
             color: #1f5c53;
             font-weight: bold;
         }
+
+        /* ---------- footer ---------- */
+        footer {
+            background-color: #2b0f1e;
+            color: #c9b8a8;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+
         
     </style>
 </head>
@@ -258,7 +268,43 @@
                 </div>
             </div>
         </div>
+        <p id ="noResults" style="display: none; color: #888; font-style: italic;">No events found</p>
+    
     </main>
+
+    <footer>
+        <p>&copy; City Mall. Your Trusted Mall.</p>
+    </footer>
+    <script>
+        function filterEvents(){
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toLowerCase();
+            var list = document.getElementById("eventList");
+            var cards = list.getElementsByClassName("event-card");
+            var matchCount = 0;
+
+            for (var i=0; i<cards.length; i++){
+                var titleElement = cards[i].getElementsByTagName("h3")[0];
+                var titleText = titleElement.textContent || titleElement.innerText;
+
+                if(titleText.toLocaleLowerCase().indexOf(filter) > -1){
+                    cards[i].style.display = "flex";
+                    matchCount++;
+                }
+                else {
+                    cards[i].style.display = "none";
+
+                }
+            }
+
+            var noResults = document.getElementById("noResults");
+            if (matchCount === 0){
+                noResults.style.display = "block";
+            }else{
+                noResults.style.display = "none";
+            }
+        }
+    </script>
     
 </body>
 </html>
