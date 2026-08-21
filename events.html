@@ -69,6 +69,105 @@
 
 
         }
+
+        /*banner*/
+        .page-banner {
+            background-color: #3a1528;
+            color: #f4ede0;
+            padding: 50px 30px;
+            text-align: center;
+        }
+ 
+        .page-banner h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+ 
+        .page-banner p {
+            font-size: 15px;
+            color: #d9c9b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        /* ---------- main section ---------- */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 30px;
+        }
+        
+        .section-title {
+            font-size: 26px;
+            color: #2b0f1e;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #c9a24b;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        
+        /* ---------- simple search box ---------- */
+        .search-box {
+            margin-bottom: 35px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        /* ---------- event cards ---------- */
+        .event-card {
+            background-color: #ffffff;
+            border: 1px solid #e0d5c0;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 18px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .event-date {
+            background-color: #2b0f1e;
+            color: #c9a24b;
+            text-align: center;
+            padding: 10px 16px;
+            border-radius: 4px;
+            min-width: 70px;
+        }
+        
+        .event-date .day {
+            font-size: 24px;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .event-date .month {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        
+        .event-info h3 {
+            font-size: 19px;
+            color: #2b0f1e;
+            margin-bottom: 6px;
+        }
+        
+        .event-info p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 6px;
+        }
+        
+        .event-location {
+            font-size: 13px;
+            color: #1f5c53;
+            font-weight: bold;
+        }
         
     </style>
 </head>
@@ -87,6 +186,79 @@
             </ul>
         </nav>
     </header>
+    <div class = "page-banner">
+        <h1>Special Events</h1>
+        <p>Carnivals, tournaments, fashion shows, and tastings. Something is always happening at City Mall.</p>
+    </div>
+
+    <main>
+        <h2 class = "section-title">Upcoming Events</h2>
+        <div class="search-box">
+            <input type= "text" id= "searchInput" placeholder="Search events by name" onkeyup="filterEvents()">
+        </div>
+
+        <div id="eventList">
+            <div class = "event-card">
+                <div class = "event-date">
+                    <span class ="day">09</span>
+                    <span class="month">Aug</span>
+                </div>
+                <div class = "event-info">
+                    <h3>winter Carnival</h3>
+                    <p>Live music, face painting, and a giant snow-foam pit</p>
+                    <span class="event-location">Central Court</span>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">12</span>
+                    <span class="month">Aug</span>
+                </div>
+                <div class="event-info">
+                    <h3>Kids' Fashion Week</h3>
+                    <p>Runway shows and pop-up sales from every children's wear shop.</p>
+                    <span class="event-location">Floor 1 Atrium</span>
+                </div>
+            </div>
+ 
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">16</span>
+                    <span class="month">Aug</span>
+                </div>
+                <div class="event-info">
+                    <h3>Retro Gaming Night</h3>
+                    <p>Classic arcade cabinets, high-score tournaments, and prizes.</p>
+                    <span class="event-location">Pixel Arcade, Floor 2</span>
+                </div>
+            </div>
+ 
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">22</span>
+                    <span class="month">Aug</span>
+                </div>
+                <div class="event-info">
+                    <h3>Taste of the City</h3>
+                    <p>Sample menus from every food and ice cream shop in one evening.</p>
+                    <span class="event-location">Food Court</span>
+                </div>
+            </div>
+ 
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">30</span>
+                    <span class="month">Aug</span>
+                </div>
+                <div class="event-info">
+                    <h3>Back-to-School Bazaar</h3>
+                    <p>Uniform fittings, book fairs, and stationery deals for the new term.</p>
+                    <span class="event-location">Floor 3 Concourse</span>
+                </div>
+            </div>
+        </div>
+    </main>
     
 </body>
 </html>
