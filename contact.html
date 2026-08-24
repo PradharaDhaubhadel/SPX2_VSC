@@ -17,6 +17,9 @@
             color: inherit;
             text-decoration: none;
         }
+        h1, h2, h3, h4, .logo {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
          /*  HEADER / NAVIGATION BAR */
         nav{
             max-width: 1100px;
@@ -61,6 +64,50 @@
 
 
         }
+        /* PAGE HERO (top banner for this page) */
+        .page-hero {
+        background-color: #2b0f1e;
+        color: #f4ede0;
+        padding: 50px 20px;
+        }
+        
+        .page-hero-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        }
+        
+        .eyebrow {
+        color: #c9a24b;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+        }
+        
+        .page-title {
+        font-size: 40px;
+        font-weight: 900;
+        }
+        
+        .page-title em {
+        color: #e4cf9a;
+        font-style: italic;
+        font-weight: 600;
+        }
+        
+        .page-sub {
+        max-width: 500px;
+        color: #d9c9b8;
+        margin-top: 15px;
+        }
+
+        /* GENERAL SECTION SPACING */
+        section {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 50px 20px;
+        }
+        
         /* FOOTER */
         footer {
         background-color: #2b0f1e;
@@ -112,6 +159,15 @@
             </ul>
         </nav>
     </header>
+    <!-- ============ PAGE HERO ============ -->
+    <section class="page-hero">
+        <div class="page-hero-inner">
+            <div class="eyebrow">We're here daily</div>
+            <h1 class="page-title">Get in <em>touch</em>.</h1>
+            <p class="page-sub">Questions about a shop, an event booking, or leasing space -
+            send a message and the right team will get back to you.</p>
+        </div>
+    </section>
     <!-- ============ FOOTER ============ -->
     <footer>
         <div class="footer-inner">
