@@ -20,6 +20,11 @@
         h1, h2, h3, h4, .logo {
             font-family: 'Playfair Display', Georgia, serif;
         }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
          /*  HEADER / NAVIGATION BAR */
         nav{
             max-width: 1100px;
@@ -130,7 +135,7 @@
             padding: 6px 12px;
             border-radius: 15px;
         }
-        
+
         /* FOOTER */
         footer {
             background-color: #2b0f1e;
@@ -165,6 +170,56 @@
             border-top: 1px solid rgba(201,162,75,.2);
             padding-top: 15px;
         }
+        /* POSTER GRID */
+        .poster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 18px;
+        }
+        
+        .poster {
+            position: relative;      /* lets us place text on top of the image */
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 3 / 4;      /* keeps every poster the same tall shape */
+        }
+        
+        .poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;        /* fills the box without stretching the photo */
+        }
+        
+        /* A dark gradient placed over the bottom of the photo,
+        so the white text is always readable */
+        .poster-shade {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 60%;
+            background: linear-gradient(to top, rgba(0,0,0,.8), transparent);
+        }
+        
+        .poster-text {
+            position: absolute;
+            left: 18px;
+            bottom: 18px;
+            right: 18px;
+            color: #f4ede0;
+        }
+        
+        .poster-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #e4cf9a;
+        }
+        
+        .poster-text h4 {
+            font-size: 20px;
+            margin-top: 4px;
+        }
     </style>
 </head>
 <body>
@@ -190,6 +245,15 @@
             <p class="page-sub">Campaign art currently up on our concourse boards, one per featured shop.</p>
         </div>
     </section>
+    <!-- ============ POSTER GRID ============ -->
+    <section>
+        <div class="section-head">
+            <h2>Current posters</h2>
+            <div class="section-tag" id="posterCount"></div>
+        </div>
+        
+        <div class="poster-grid" id="posterGrid"></div>
+    </section>
     <!-- ============ FOOTER ============ -->
     <footer>
         <div class="footer-inner">
@@ -211,5 +275,64 @@
         </div>
         <div class="fine">City Mall - Directory for demonstration purposes.</div>
     </footer>
+    <script>
+        /* ALL POSTER DATA IS STORED IN ONE SIMPLE ARRAY.Each poster is one object with:
+        - tag: the small label at the top of the text
+        - title: the shop name shown in big text
+        - photo: a real image URL  */
+        var posters = [
+        { tag: "Now Showing", title: "Grand Screen Cinema",
+            photo: "https://picsum.photos/seed/citymall-cinema/500/700" },
+        
+        { tag: "New Season", title: "Silver Thread Jewelers",
+            photo: "https://picsum.photos/seed/citymall-jewelry/500/700" },
+        
+        { tag: "Level Up", title: "Pixel Arcade",
+            photo: "https://picsum.photos/seed/citymall-arcade/500/700" },
+        
+        { tag: "Cool Down", title: "Frostbite Creamery",
+            photo: "https://picsum.photos/seed/citymall-icecream/500/700" },
+        
+        { tag: "Fresh Kicks", title: "Stride Footwear",
+            photo: "https://picsum.photos/seed/citymall-shoes/500/700" },
+        
+        { tag: "Train Hard", title: "IronCore Fitness Wear",
+            photo: "https://picsum.photos/seed/citymall-fitness/500/700" }
+        ];
+        
+        
+        /* building the HTML for ONE poster box */
+        function buildPosterHTML(poster) {
+        var html = "";
+        html += "<div class='poster'>";
+        html += "  <img src='" + poster.photo + "' alt='" + poster.title + "'>";
+        html += "  <div class='poster-shade'></div>";
+        html += "  <div class='poster-text'>";
+        html += "    <div class='poster-tag'>" + poster.tag + "</div>";
+        html += "    <h4>" + poster.title + "</h4>";
+        html += "  </div>";
+        html += "</div>";
+        return html;
+        }
+        
+        
+        /* showing all posters on the page */
+        function showPosters() {
+        var grid = document.getElementById("posterGrid");
+        var output = "";
+        
+        for (var i = 0; i < posters.length; i++) {
+            output += buildPosterHTML(posters[i]);
+        }
+        
+        grid.innerHTML = output;
+        
+        // also updating the little counter badge, e.g. "6 shops featured"
+        document.getElementById("posterCount").textContent = posters.length + " shops featured";
+        }
+        
+        showPosters();
+        
+        </script>
 </body>
 </html>
