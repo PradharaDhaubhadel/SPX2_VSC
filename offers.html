@@ -150,6 +150,28 @@
             padding: 5px 10px;
             border-radius: 3px;
         }
+
+        /* 3 columns on wide screens, 2 on tablets, 1 on phones */
+        @media (max-width: 900px) {
+            .offers-grid {
+            grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .offers-grid {
+            grid-template-columns: 1fr;
+            }
+        }
+
+        /* ---------- footer ---------- */
+        footer {
+            background-color: #2b0f1e;
+            color: #c9b8a8;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
     </style>
 
     
@@ -177,7 +199,7 @@
 
     <main>
         <h2 class="section-title">Active</h2>
-        <div  clas="offers-grid">
+        <div  class="offers-grid">
             <div class="offer-card">
                 <div class="offer-percent">40<span class="small-text"> % OFF</span>
                 </div>
@@ -221,7 +243,9 @@
             </div>
         </div>
     </main>
-
+    <footer>
+        <p>&copy; City Mall. Offers available.</p>
+    </footer>
     
 </body>
 </html>
