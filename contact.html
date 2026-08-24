@@ -66,81 +66,231 @@
         }
         /* PAGE HERO (top banner for this page) */
         .page-hero {
-        background-color: #2b0f1e;
-        color: #f4ede0;
-        padding: 50px 20px;
+            background-color: #2b0f1e;
+            color: #f4ede0;
+            padding: 50px 20px;
         }
         
         .page-hero-inner {
-        max-width: 1100px;
-        margin: 0 auto;
+            max-width: 1100px;
+            margin: 0 auto;
         }
         
         .eyebrow {
-        color: #c9a24b;
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 12px;
+            color: #c9a24b;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
         }
         
         .page-title {
-        font-size: 40px;
-        font-weight: 900;
+            font-size: 40px;
+            font-weight: 900;
         }
         
         .page-title em {
-        color: #e4cf9a;
-        font-style: italic;
-        font-weight: 600;
+            color: #e4cf9a;
+            font-style: italic;
+            font-weight: 600;
         }
         
         .page-sub {
-        max-width: 500px;
-        color: #d9c9b8;
-        margin-top: 15px;
+            max-width: 500px;
+            color: #d9c9b8;
+            margin-top: 15px;
         }
 
         /* GENERAL SECTION SPACING */
         section {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 50px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* CONTACT SECTION LAYOUT
+   Two columns: info card on the left,
+   form on the right. Stacks on small screens. */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+        }
+        
+        @media (max-width: 800px) {
+            .contact-grid {
+           grid-template-columns: 1fr;
+        }
+        }
+        
+        /* ---- Left card: address / phone / hours ---- */
+        .contact-info-card {
+            background-color: #2b0f1e;
+            color: #f4ede0;
+            padding: 30px;
+            border-radius: 5px;
+        }
+        
+        .contact-info-card h3 {
+            color: #e4cf9a;
+            margin-bottom: 18px;
+        }
+        
+        .info-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .info-row .ico {
+            color: #c9a24b;
+            font-size: 12px;
+            text-transform: uppercase;
+            min-width: 65px;
+        }
+        
+        .info-row .val {
+            font-size: 14px;
+            color: #e6dbc8;
+        }
+        
+        .hours-table {
+            margin-top: 20px;
+            border-top: 1px solid rgba(201,162,75,.3);
+            padding-top: 15px;
+        }
+        
+        .hours-table div {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            padding: 4px 0;
+            color: #c9b8a8;
+        }
+        
+        .hours-table div span:last-child {
+            color: #e4cf9a;
+        }
+        
+        /* ---- Right side: the form ---- */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        @media (max-width: 520px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .form-row label {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #1f5c53;
+        }
+        
+        .form-row input,
+        .form-row select,
+        .form-row textarea {
+            border: 1px solid #d8cab4;
+            background-color: #ffffff;
+            padding: 12px;
+            font-family: 'Poppins', Arial, sans-serif;
+            font-size: 14px;
+            border-radius: 3px;
+            color: #1c0d14;
+        }
+        
+        .form-row textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+        
+        .form-submit {
+            align-self: flex-start;
+            background-color: #2b0f1e;
+            color: #f4ede0;
+            border: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            padding: 14px 26px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .form-note {
+            font-size: 12px;
+            color: #8a7c6e;
+        }
+        
+        #formStatus {
+            color: #1f5c53;
+            font-weight: bold;
+            display: none;   /* hidden until the form is submitted */
+        }
+        
+        /* ---- Simple map placeholder box ---- */
+        .map-strip {
+            margin-top: 40px;
+            background-color: #3a1528;
+            border-radius: 5px;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e4cf9a;
+            font-size: 13px;
+            text-transform: uppercase;
         }
         
         /* FOOTER */
         footer {
-        background-color: #2b0f1e;
-        color: #c9b8a8;
-        padding: 40px 20px;
-        margin-top: 40px;
+            background-color: #2b0f1e;
+            color: #c9b8a8;
+            padding: 40px 20px;
+            margin-top: 40px;
         }
         
         .footer-inner {
-        max-width: 1100px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
         }
         
         .footer-inner a {
-        display: block;
-        font-size: 13px;
-        margin-bottom: 6px;
+            display: block;
+            font-size: 13px;
+            margin-bottom: 6px;
         }
         
         .footer-inner strong {
-        color: #e4cf9a;
+            color: #e4cf9a;
         }
         
         footer .fine {
-        text-align: center;
-        font-size: 12px;
-        margin-top: 25px;
-        border-top: 1px solid rgba(201,162,75,.2);
-        padding-top: 15px;
+            text-align: center;
+            font-size: 12px;
+            margin-top: 25px;
+            border-top: 1px solid rgba(201,162,75,.2);
+            padding-top: 15px;
         }
     </style>
 </head>
@@ -168,12 +318,89 @@
             send a message and the right team will get back to you.</p>
         </div>
     </section>
+
+    <!-- ============ CONTACT INFO + FORM ============ -->
+    <section>
+        <div class="contact-grid">
+        
+            <!-- Left: contact info card -->
+            <div class="contact-info-card">
+            <h3>Visit or write</h3>
+        
+            <div class="info-row">
+                <div class="ico">Address</div>
+                <div class="val">New Road<br>Kathmandu District, Nepal</div>
+            </div>
+        
+            <div class="info-row">
+                <div class="ico">Phone</div>
+                <div class="val">+977-1-4123456</div>
+            </div>
+        
+            <div class="info-row">
+                <div class="ico">Email</div>
+                <div class="val">citymall@gmail.com</div>
+            </div>
+        
+            <div class="info-row">
+                <div class="ico">Leasing</div>
+                <div class="val">citymallleasing@gmail.com</div>
+            </div>
+        
+            <div class="hours-table">
+                <div><span>Monday - Friday</span><span>10:00 AM - 10:00 PM</span></div>
+                <div><span>Saturday</span><span>9:00 AM - 11:00 PM</span></div>
+                <div><span>Sunday</span><span>10:00 AM - 9:00 PM</span></div>
+            </div>
+            </div>
+        
+            <!-- Right: the contact form -->
+            <form class="contact-form" id="contactForm">
+        
+            <div class="two-col">
+                <div class="form-row">
+                <label for="fname">Full name</label>
+                <input type="text" id="fname" name="fname" required placeholder="Jane Rivera">
+                </div>
+                <div class="form-row">
+                <label for="femail">Email</label>
+                <input type="email" id="femail" name="femail" required placeholder="jane@example.com">
+                </div>
+            </div>
+        
+            <div class="form-row">
+                <label for="ftopic">This is about</label>
+                <select id="ftopic" name="ftopic">
+                <option>A shop or product</option>
+                <option>An event booking</option>
+                <option>Leasing a store</option>
+                <option>Feedback or a complaint</option>
+                <option>Something else</option>
+                </select>
+            </div>
+        
+            <div class="form-row">
+                <label for="fmsg">Message</label>
+                <textarea id="fmsg" name="fmsg" required placeholder="Tell us what you need..."></textarea>
+            </div>
+        
+            <p class="form-note">This is a demonstration form - messages aren't actually sent anywhere yet.</p>
+        
+            <button type="submit" class="form-submit">Send message</button>
+        
+            <p class="form-note" id="formStatus">Thanks - your message has been noted.</p>
+            </form>
+        </div>
+        
+        <div class="map-strip">New Road - Kathmandu District, Nepal</div>
+    </section>
+
     <!-- ============ FOOTER ============ -->
     <footer>
         <div class="footer-inner">
             <div>
             <div class="logo">CITY <span>MALL</span></div>
-            <p style="font-size:13px; max-width:280px;">42 Riverside Avenue, Downtown District<br>Open daily, 10:00 AM - 10:00 PM</p>
+            <p style="font-size:13px; max-width:280px;">New Road, Kathmandu District, Nepal<br>Open daily, 10:00 AM - 10:00 PM<br>Open daily, 10:00 AM - 10:00 PM</p>
             </div>
             <div>
             <strong>Visit</strong>
@@ -189,5 +416,30 @@
         </div>
         <div class="fine">City Mall - Directory for demonstration purposes.</div>
     </footer>
+    <script>
+        /* The contact page only needs ONE piece of JavaScript:
+        when the form is submitted, stop the page from reloading, and show a "thanks" message instead. */
+        
+        // grab the form and the message box from the page
+        var form = document.getElementById("contactForm");
+        var statusMsg = document.getElementById("formStatus");
+        
+        // this function runs when the user clicks "Send message"
+        function handleFormSubmit(event) {
+        
+        // stop the browser from actually submitting/reloading the page
+        event.preventDefault();
+        
+        // show the "thanks" message
+        statusMsg.style.display = "block";
+        
+        // clear all the input fields
+        form.reset();
+        }
+        
+        // listen for the form's submit event
+        form.addEventListener("submit", handleFormSubmit);
+        
+    </script>
 </body>
 </html>
