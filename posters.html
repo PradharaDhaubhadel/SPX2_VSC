@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Mall - Posters</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f4ede0;   /* cream background */
+            color: #1c0d14;              /* dark text */
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        h1, h2, h3, h4, .logo {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+         /*  HEADER / NAVIGATION BAR */
+        nav{
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .logo{
+            color: #f4ede0;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span{
+            color: #c9a24b;
+
+        }
+        header{
+            background-color: #2b0f1e;
+            padding: 15px 30px;
+        }
+        nav ul{
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a{
+            color: #e4cf9a;
+            font-size: 14px;
+        }
+        nav ul li a:hover{
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        nav ul li a.active{
+            color: #ffffff;
+            font-weight: bold;
+
+
+        }
+        /* PAGE HERO (top banner for this page) */
+        .page-hero {
+            background-color: #2b0f1e;
+            color: #f4ede0;
+            padding: 50px 20px;
+        }
+        
+        .page-hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .eyebrow {
+            color: #c9a24b;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        
+        .page-title {
+            font-size: 40px;
+            font-weight: 900;
+        }
+        
+        .page-title em {
+            color: #e4cf9a;
+            font-style: italic;
+            font-weight: 600;
+        }
+        
+        .page-sub {
+            max-width: 500px;
+            color: #d9c9b8;
+            margin-top: 15px;
+        }
+        
+        /* GENERAL SECTION SPACING */
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .section-head h2 {
+            color: #2b0f1e;
+            font-size: 28px;
+        }
+        
+        .section-tag {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #1f5c53;
+            border: 1px solid #1f5c53;
+            padding: 6px 12px;
+            border-radius: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #2b0f1e;
+            color: #c9b8a8;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+        
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-inner a {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        
+        .footer-inner strong {
+            color: #e4cf9a;
+        }
+        
+        footer .fine {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 25px;
+            border-top: 1px solid rgba(201,162,75,.2);
+            padding-top: 15px;
+        }
+        /* POSTER GRID */
+        .poster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 18px;
+        }
+        
+        .poster {
+            position: relative;      /* lets us place text on top of the image */
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 3 / 4;      /* keeps every poster the same tall shape */
+        }
+        
+        .poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;        /* fills the box without stretching the photo */
+        }
+        
+        /* A dark gradient placed over the bottom of the photo,
+        so the white text is always readable */
+        .poster-shade {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 60%;
+            background: linear-gradient(to top, rgba(0,0,0,.8), transparent);
+        }
+        
+        .poster-text {
+            position: absolute;
+            left: 18px;
+            bottom: 18px;
+            right: 18px;
+            color: #f4ede0;
+        }
+        
+        .poster-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #e4cf9a;
+        }
+        
+        .poster-text h4 {
+            font-size: 20px;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CITY <span> MALL </span></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shops.html">Shops</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="posters.html" class="active">Posters</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ============ PAGE HERO ============ -->
+    <section class="page-hero">
+        <div class="page-hero-inner">
+            <div class="eyebrow">On display around the mall</div>
+            <h1 class="page-title">Shop <em>posters</em>.</h1>
+            <p class="page-sub">Campaign art currently up on our concourse boards, one per featured shop.</p>
+        </div>
+    </section>
+    <!-- ============ POSTER GRID ============ -->
+    <section>
+        <div class="section-head">
+            <h2>Current posters</h2>
+            <div class="section-tag" id="posterCount"></div>
+        </div>
+        
+        <div class="poster-grid" id="posterGrid"></div>
+    </section>
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="footer-inner">
+            <div>
+            <div class="logo">CITY <span>MALL</span></div>
+            <p style="font-size:13px; max-width:280px;">New Road, Kathmandu District, Nepal<br>Open daily, 10:00 AM - 10:00 PM<br>Open daily, 10:00 AM - 10:00 PM</p>
+            </div>
+            <div>
+            <strong>Visit</strong>
+            <a href="shops.html">Shop directory</a>
+            <a href="events.html">Events calendar</a>
+            <a href="offers.html">Current offers</a>
+            </div>
+            <div>
+            <strong>Company</strong>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="fine">City Mall - Directory for demonstration purposes.</div>
+    </footer>
+    <script>
+        /* ALL POSTER DATA IS STORED IN ONE SIMPLE ARRAY.Each poster is one object with:
+        - tag: the small label at the top of the text
+        - title: the shop name shown in big text
+        - photo: a real image URL  */
+        var posters = [
+        { tag: "Now Showing", title: "Grand Screen Cinema",
+            photo: "https://picsum.photos/seed/citymall-cinema/500/700" },
+        
+        { tag: "New Season", title: "Silver Thread Jewelers",
+            photo: "https://picsum.photos/seed/citymall-jewelry/500/700" },
+        
+        { tag: "Level Up", title: "Pixel Arcade",
+            photo: "https://picsum.photos/seed/citymall-arcade/500/700" },
+        
+        { tag: "Cool Down", title: "Frostbite Creamery",
+            photo: "https://picsum.photos/seed/citymall-icecream/500/700" },
+        
+        { tag: "Fresh Kicks", title: "Stride Footwear",
+            photo: "https://picsum.photos/seed/citymall-shoes/500/700" },
+        
+        { tag: "Train Hard", title: "IronCore Fitness Wear",
+            photo: "https://picsum.photos/seed/citymall-fitness/500/700" }
+        ];
+        
+        
+        /* building the HTML for ONE poster box */
+        function buildPosterHTML(poster) {
+        var html = "";
+        html += "<div class='poster'>";
+        html += "  <img src='" + poster.photo + "' alt='" + poster.title + "'>";
+        html += "  <div class='poster-shade'></div>";
+        html += "  <div class='poster-text'>";
+        html += "    <div class='poster-tag'>" + poster.tag + "</div>";
+        html += "    <h4>" + poster.title + "</h4>";
+        html += "  </div>";
+        html += "</div>";
+        return html;
+        }
+        
+        
+        /* showing all posters on the page */
+        function showPosters() {
+        var grid = document.getElementById("posterGrid");
+        var output = "";
+        
+        for (var i = 0; i < posters.length; i++) {
+            output += buildPosterHTML(posters[i]);
+        }
+        
+        grid.innerHTML = output;
+        
+        // also updating the little counter badge, e.g. "6 shops featured"
+        document.getElementById("posterCount").textContent = posters.length + " shops featured";
+        }
+        
+        showPosters();
+        
+        </script>
+</body>
+</html>
