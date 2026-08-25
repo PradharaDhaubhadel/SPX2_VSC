@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>City Mall - Shops</title>
+
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+
+            background-color: #f4ede0;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background-color: #2b0f1e;
+            padding: 15px 30px;
+
+            border-bottom: 1px solid rgba(201, 162, 75, 0.35);
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #f4ede0;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #c9a24b;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #e4cf9a;
+
+            font-size: 14px;
+
+            padding-bottom: 4px;
+
+            border-bottom: 1px solid transparent;
+
+            transition: 0.2s;
+        }
+
+        nav ul li a:hover {
+            color: white;
+            border-bottom-color: #c9a24b;
+        }
+
+        nav ul li a.active {
+            color: white;
+
+            font-weight: bold;
+
+            border-bottom-color: #c9a24b;
+        }
+
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .directory-hero {
+
+            background:
+                radial-gradient(
+                    ellipse at 20% -10%,
+                    rgba(201, 162, 75, 0.25),
+                    transparent 55%
+                ),
+                linear-gradient(
+                    180deg,
+                    #2b0f1e 0%,
+                    #3a1528 100%
+                );
+
+            color: #f4ede0;
+
+            padding: 65px 30px 55px;
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            color: #c9a24b;
+
+            font-family: "Courier New", monospace;
+
+            font-size: 12px;
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 16px;
+        }
+
+        .directory-hero h1 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 58px;
+
+            line-height: 1;
+
+            margin-bottom: 18px;
+        }
+
+        .directory-hero h1 em {
+            color: #e4cf9a;
+            font-weight: normal;
+        }
+
+        .directory-hero p {
+            max-width: 560px;
+
+            color: #d9c9b8;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding: 70px 30px;
+        }
+
+
+        /* =========================
+           SEARCH FINDER
+        ========================= */
+
+        .finder {
+            background-color: #2b0f1e;
+
+            color: #f4ede0;
+
+            padding: 40px;
+
+            border-radius: 4px;
+
+            margin-bottom: 70px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .finder h2 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 30px;
+
+            margin-bottom: 7px;
+        }
+
+        .finder .sub {
+            color: #c9b8a8;
+
+            font-size: 14px;
+
+            margin-bottom: 24px;
+        }
+
+        .finder-input-row {
+            width: 100%;
+        }
+
+        #itemSearch {
+            width: 100%;
+
+            background-color: #3a1528;
+
+            border: 1px solid rgba(201, 162, 75, 0.5);
+
+            color: #f4ede0;
+
+            padding: 14px 16px;
+
+            font-size: 15px;
+
+            border-radius: 2px;
+        }
+
+        #itemSearch::placeholder {
+            color: #9a8878;
+        }
+
+        #itemSearch:focus {
+            outline: 2px solid #c9a24b;
+
+            outline-offset: 1px;
+        }
+
+
+        /* =========================
+           SEARCH CHIPS
+        ========================= */
+
+        .chip-row {
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+            margin-top: 16px;
+        }
+
+        .chip {
+            font-family: "Courier New", monospace;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+
+            border: 1px solid rgba(201, 162, 75, 0.5);
+
+            color: #e4cf9a;
+
+            background: transparent;
+
+            padding: 7px 13px;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .chip:hover {
+            background-color: #c9a24b;
+
+            color: #2b0f1e;
+        }
+
+
+        /* =========================
+           SECTION HEADER
+        ========================= */
+
+        .section-head {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 20px;
+        }
+
+        .section-head h2 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 30px;
+
+            color: #2b0f1e;
+        }
+
+        .section-tag {
+            background-color: #2b0f1e;
+
+            color: #e4cf9a;
+
+            padding: 5px 12px;
+
+            border-radius: 20px;
+
+            font-family: "Courier New", monospace;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           FILTER BUTTONS
+        ========================= */
+
+        .filter-bar {
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            font-family: "Courier New", monospace;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            padding: 10px 16px;
+
+            border-radius: 25px;
+
+            border: 1px solid #2b0f1e;
+
+            background-color: transparent;
+
+            color: #2b0f1e;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .filter-btn:hover {
+            background-color: #2b0f1e;
+
+            color: #f4ede0;
+        }
+
+        .filter-btn.active {
+            background-color: #2b0f1e;
+
+            color: #f4ede0;
+        }
+
+
+        /* =========================
+           SHOP GRID
+        ========================= */
+
+        .dir-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 18px;
+        }
+
+
+        /* =========================
+           SHOP CARD
+        ========================= */
+
+        .shop-card {
+            background-color: white;
+
+            border: 1px solid #e6dbc8;
+
+            border-radius: 3px;
+
+            overflow: hidden;
+
+            transition: 0.2s;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+        .shop-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 14px 30px -12px
+                rgba(43, 15, 30, 0.25);
+        }
+
+
+        /* =========================
+           SHOP BANNER
+        ========================= */
+
+        .shop-banner {
+            height: 92px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #f4ede0;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 17px;
+
+            text-align: center;
+
+            position: relative;
+
+            padding: 0 12px;
+        }
+
+        .floor-badge {
+            position: absolute;
+
+            top: 10px;
+
+            right: 10px;
+
+            font-family: "Courier New", monospace;
+
+            font-size: 10px;
+
+            background: rgba(0, 0, 0, 0.25);
+
+            padding: 3px 8px;
+
+            border-radius: 10px;
+        }
+
+
+        /* =========================
+           SHOP BODY
+        ========================= */
+
+        .shop-body {
+            padding: 16px 18px 20px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            flex: 1;
+        }
+
+        .cat-label {
+            font-family: "Courier New", monospace;
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            color: #1f5c53;
+
+            margin-bottom: 6px;
+        }
+
+        .shop-body h3 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 20px;
+
+            color: #2b0f1e;
+
+            margin-bottom: 8px;
+        }
+
+        .items {
+            font-size: 13px;
+
+            color: #5a4c40;
+
+            margin-bottom: 15px;
+        }
+
+        .discount-badge {
+            align-self: flex-start;
+
+            margin-top: auto;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            background-color: #c9a24b;
+
+            color: #2b0f1e;
+
+            padding: 4px 10px;
+
+            border-radius: 20px;
+        }
+
+
+        /* =========================
+           SHOP COLORS
+        ========================= */
+
+        .cat-shoes {
+            background: linear-gradient(
+                135deg,
+                #7a5230,
+                #5c3d22
+            );
+        }
+
+        .cat-fitness {
+            background: linear-gradient(
+                135deg,
+                #2e6e5c,
+                #1f4d40
+            );
+        }
+
+        .cat-toys {
+            background: linear-gradient(
+                135deg,
+                #c9862f,
+                #a86a1f
+            );
+        }
+
+        .cat-grocery {
+            background: linear-gradient(
+                135deg,
+                #416b2a,
+                #315321
+            );
+        }
+
+        .cat-books {
+            background: linear-gradient(
+                135deg,
+                #39315c,
+                #292344
+            );
+        }
+
+        .cat-electronics {
+            background: linear-gradient(
+                135deg,
+                #1f4d5c,
+                #16323d
+            );
+        }
+
+        .cat-beauty {
+            background: linear-gradient(
+                135deg,
+                #8c3b57,
+                #6b2941
+            );
+        }
+
+
+        /* =========================
+           NO RESULTS
+        ========================= */
+
+        .no-results {
+            text-align: center;
+
+            padding: 40px;
+
+            background-color: white;
+
+            border: 1px solid #e6dbc8;
+
+            color: #5a4c40;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 18px;
+
+            grid-column: 1 / -1;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #2b0f1e;
+
+            padding: 60px 30px 30px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            flex-wrap: wrap;
+
+            gap: 40px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: #c9b8a8;
+
+            font-size: 14px;
+        }
+
+        .footer-col h4 {
+            color: #c9a24b;
+
+            font-size: 15px;
+
+            margin-bottom: 14px;
+        }
+
+        .footer-col a {
+            display: block;
+
+            color: #e4cf9a;
+
+            font-size: 14px;
+
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+
+            margin: 40px auto 0;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid rgba(201, 162, 75, 0.25);
+        }
+
+        .footer-bottom p {
+            font-family: "Courier New", monospace;
+
+            font-size: 12px;
+
+            color: #9a8878;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 12px;
+            }
+
+            .directory-hero h1 {
+                font-size: 44px;
+            }
+
+            .finder {
+                padding: 30px 20px;
+            }
+
+            .section-head {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 12px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+
+                gap: 30px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER / NAVIGATION
+    ========================= -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                CITY <span>MALL</span>
+            </div>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="shops.html" class="active">
+                        Shops
+                    </a>
+                </li>
+
+                <li>
+                    <a href="events.html">
+                        Events
+                    </a>
+                </li>
+
+                <li>
+                    <a href="offers.html">
+                        Offers
+                    </a>
+                </li>
+
+                <li>
+                    <a href="posters.html">
+                        Posters
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================= -->
+
+    <section class="directory-hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                14 STORES · 7 CATEGORIES
+            </div>
+
+            <h1>
+                The full <em>directory.</em>
+            </h1>
+
+            <p>
+                Every shop in City Mall, filterable by category.
+                Or use the item finder below if you know what
+                you're shopping for, not where.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================= -->
+
+    <main>
+
+
+        <!-- =========================
+             SEARCH SECTION
+        ========================= -->
+
+        <section class="search-section">
+
+            <div class="finder">
+
+                <h2>
+                    What are you looking for?
+                </h2>
+
+                <p class="sub">
+                    Type an item and see which shops carry it.
+                </p>
+
+
+                <div class="finder-input-row">
+
+                    <input
+                        type="text"
+                        id="itemSearch"
+                        placeholder="Try 'necklace' or 'popcorn'..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- SEARCH CHIPS -->
+
+                <div class="chip-row">
+
+                    <button
+                        class="chip"
+                        data-search="sneakers">
+                        sneakers
+                    </button>
+
+                    <button
+                        class="chip"
+                        data-search="gold rings">
+                        gold rings
+                    </button>
+
+                    <button
+                        class="chip"
+                        data-search="popcorn">
+                        popcorn
+                    </button>
+
+                    <button
+                        class="chip"
+                        data-search="treadmill">
+                        treadmill
+                    </button>
+
+                    <button
+                        class="chip"
+                        data-search="building blocks">
+                        building blocks
+                    </button>
+
+                    <button
+                        class="chip"
+                        data-search="headphones">
+                        headphones
+                    </button>
+
+                    <button
+                        class="chip"
+                        data-search="lipstick">
+                        lipstick
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DIRECTORY SECTION
+        ========================= -->
+
+        <section class="directory-section">
+
+
+            <div class="section-head">
+
+                <h2>
+                    Browse by category
+                </h2>
+
+                <div
+                    class="section-tag"
+                    id="shopCount">
+                    14 stores
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 FILTER BUTTONS
+            ========================= -->
+
+            <div class="filter-bar">
+
+                <button
+                    class="filter-btn active"
+                    data-category="all">
+                    All
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-category="shoes">
+                    Shoes
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-category="fitness">
+                    Fitness
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-category="toys">
+                    Toys
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-category="grocery">
+                    Grocery
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-category="books-stationery">
+                    Books &amp; Stationery
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-category="electronics">
+                    Electronics
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-category="beauty">
+                    Beauty
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 SHOP GRID
+            ========================= -->
+
+            <div
+                class="dir-grid"
+                id="shopGrid">
+
+
+                <!-- STRIDE FOOTWEAR -->
+
+                <div
+                    class="shop-card"
+                    data-category="shoes"
+                    data-items="sneakers running shoes formal shoes sandals">
+
+                    <div class="shop-banner cat-shoes">
+
+                        Stride Footwear
+
+                        <span class="floor-badge">
+                            Floor 2
+                        </span>
+
+                    </div>
+
+                    <div class="shop-body">
+
+                        <div class="cat-label">
+                            Shoes
+                        </div>
+
+                        <h3>
+                            Stride Footwear
+                        </h3>
+
+                        <p class="items">
+                            Sneakers, running shoes,
+                            formal shoes, sandals
+                        </p>
+
+                        <span class="discount-badge">
+                            Flat 30% off
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HEELBOUND -->
+
+                <div
+                    class="shop-card"
+                    data-category="shoes"
+                    data-items="heels boots loafers">
+
+                    <div class="shop-banner cat-shoes">
+
+                        Heelbound
+
+                        <span class="floor-badge">
+                            Floor 2
+                        </span>
+
+                    </div>
+
+                    <div class="shop-body">
+
+                        <div class="cat-label">
+                            Shoes
+                        </div>
+
+                        <h3>
+                            Heelbound
+                        </h3>
+
+                        <p class="items">
+                            Heels, boots, loafers
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IRONCORE FITNESS -->
+
+                <div
+                    class="shop-card"
+                    data-category="fitness"
+                    data-items="treadmill dumbbells yoga mats gym wear">
+
+                    <div class="shop-banner cat-fitness">
+
+                        IronCore Fitness Wear
+
+                        <span class="floor-badge">
+                            Floor 2
+                        </span>
+
+                    </div>
+
+                    <div class="shop-body">
+
+                        <div class="cat-label">
+                            Fitness
+                        </div>
+
+                        <h3>
+                            IronCore Fitness Wear
+                        </h3>
+
+                        <p class="items">
+                            Treadmill, dumbbells,
+                            yoga mats, gym wear
+                        </p>
+
+                        <span class="discount-badge">
+                            15% off equipment
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PULSE SPORTSWEAR -->
+
+                <div
+                    class="shop-card"
+                    data-category="fitness"
+                    data-items="running shoes protein shakers resistance bands">
+
+                    <div class="shop-banner cat-fitness">
+
+                        Pulse Sportswear
+
+                        <span class="floor-badge">
+                            Floor 2
+                        </span>
+
+                    </div>
+
+                    <div class="shop-body">
+
+                        <div class="cat-label">
+                            Fitness
+                        </div>
+
+                        <h3>
+                            Pulse Sportswear
+                        </h3>
+
+                        <p class="items">
+                            Running shoes,
+                            protein shakers,
+                            resistance bands
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOY KINGDOM -->
+
+                <div
+                    class="shop-card"
+                    data-category="toys"
+                    data-items="building blocks action figures board games remote control cars">
+
+                    <div class="shop-banner cat-toys">
+
+                        Toy Kingdom
+
+                        <span class="floor-badge">
+                            Floor 1
+                        </span>
+
+                    </div>
+
+                    <div class="shop-body">
+
+                        <div class="cat-label">
+                            Toys
+                        </div>
+
+                        <h3>
+                            Toy Kingdom
+                        </h3>
+
+                        <p class="items">
+                            Building blocks,
+                            action figures,
+                            board games,
+                            remote control cars
+                        </p>
+
+                        <span class="discount-badge">
+                            25% off building sets
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PLAYHOUSE TOYS -->
+
+                <div
+                    class="shop-card"
+                    data-category="toys"
+                    data-items="dolls puzzles plush toys">
+
+                    <div class="shop-banner cat-toys">
+
+                        Playhouse Toys
+
+                        <span class="floor-badge">
+                            Floor 1
+                        </span>
+
+                    </div>
+
+                    <div class="shop-body">
+
+                        <div class="cat-label">
+                            Toys
+                        </div>
+
+                        <h3>
+                            Playhouse Toys
+                        </h3>
+
+                        <p class="items">
+                            Dolls, puzzles, plush toys
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FRESHMART -->
+
+                <div
+                    class="shop-card"
+                    data-category="grocery"
+                    data-items="vegetables fruits dairy bakery items groceries fresh food">
+
+                    <div class="shop-banner cat-grocery">
+
+                        FreshMart Grocery
+
+                        <span class="floor-badge">
+                            Ground
+                        </span>
+
+                    </div>
+
+                    <div class="shop-body">
+
+                        <div class="cat-label">
+                            Grocery
+                        </div>
+
+                        <h3>
+                            FreshMart Grocery
+                        </h3>
+
+                        <p class="items">
+                            Vegetables · fruits · dairy ·
+                            bakery items
+                        </p>
+
+                        <span class="discount-badge">
+                            10% off first order
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GREEN BASKET -->
+
+                <div
+                    class="shop-card"
+                    data-category="grocery"
+                    data-items="organic produce spices rice grains vegetables fruits groceries">
+
+                    <div class="shop-banner cat-grocery">
+
+                        Green Basket
+
+                        <span class="floor-badge">
+                            Ground
+                        </span>
+
+                    </div>
+
+                    <div class="shop-body">
+
+                        <div class="cat-label">
+                            Grocery
+                        </div>
+
+                        <h3>
+                            Green Basket
+                        </h3>
+
+                        <p class="items">
+                            Organic produce · spices ·
+                            rice &amp; grains
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CHAPTER & VERSE -->
+
+                <div
+                    class="shop-card"
+                    data-category="books-stationery"
+                    data-items="novels comics notebooks study guides books stationery">
+
+                    <div class="shop-banner cat-books">
+
+                        Chapter &amp; Verse Books
+
+                        <span class="floor-badge">
+                            Floor 3
+                        </span>
+
+                    </div>
+
+                    <div class="shop-body">
+
+                        <div class="cat-label">
+                            Books &amp; Stationery
+                        </div>
+
+                        <h3>
+                            Chapter &amp; Verse Books
+                        </h3>
+
+                        <p class="items">
+                            Novels · comics · notebooks ·
+                            study guides
+                        </p>
+
+                        <span class="discount-badge">
+                            Buy 1 Get 1 on comics
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CIRCUITBOX -->
+
+                <div
+                    class="shop-card"
+                    data-category="electronics"
+                    data-items="headphones smartphones chargers smartwatches electronics">
+
+                    <div class="shop-banner cat-electronics">
+
+                        CircuitBox Electronics
+
+                        <span class="floor-badge">
+                            Floor 2
+                        </span>
+
+                    </div>
+
+                    <div class="shop-body">
+
+                        <div class="cat-label">
+                            Electronics
+                        </div>
+
+                        <h3>
+                            CircuitBox Electronics
+                        </h3>
+
+                        <p class="items">
+                            Headphones · smartphones ·
+                            chargers · smartwatches
+                        </p>
+
+                        <span class="discount-badge">
+                            Flat 20% off audio
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BYTEHUB -->
+
+                <div
+                    class="shop-card"
+                    data-category="electronics"
+                    data-items="laptops gaming consoles power banks electronics">
+
+                    <div class="shop-banner cat-electronics">
+
+                        ByteHub
+
+                        <span class="floor-badge">
+                            Floor 2
+                        </span>
+
+                    </div>
+
+                    <div class="shop-body">
+
+                        <div class="cat-label">
+                            Electronics
+                        </div>
+
+                        <h3>
+                            ByteHub
+                        </h3>
+
+                        <p class="items">
+                            Laptops · gaming consoles ·
+                            power banks
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GLOW BEAUTY BAR -->
+
+                <div
+                    class="shop-card"
+                    data-category="beauty"
+                    data-items="lipstick skincare sets perfume makeup brushes beauty">
+
+                    <div class="shop-banner cat-beauty">
+
+                        Glow Beauty Bar
+
+                        <span class="floor-badge">
+                            Floor 1
+                        </span>
+
+                    </div>
+
+                    <div class="shop-body">
+
+                        <div class="cat-label">
+                            Beauty
+                        </div>
+
+                        <h3>
+                            Glow Beauty Bar
+                        </h3>
+
+                        <p class="items">
+                            Lipstick · skincare sets ·
+                            perfume · makeup brushes
+                        </p>
+
+                        <span class="discount-badge">
+                            30% off skincare
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BLUSH & BLOOM -->
+
+                <div
+                    class="shop-card"
+                    data-category="beauty"
+                    data-items="face masks nail polish hair care beauty">
+
+                    <div class="shop-banner cat-beauty">
+
+                        Blush &amp; Bloom
+
+                        <span class="floor-badge">
+                            Floor 1
+                        </span>
+
+                    </div>
+
+                    <div class="shop-body">
+
+                        <div class="cat-label">
+                            Beauty
+                        </div>
+
+                        <h3>
+                            Blush &amp; Bloom
+                        </h3>
+
+                        <p class="items">
+                            Face masks · nail polish ·
+                            hair care
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+
+            <div class="footer-brand">
+
+                <div class="logo">
+                    CITY <span>MALL</span>
+                </div>
+
+                <p>
+                    42 Riverside Avenue,
+                    Downtown District
+                    <br>
+
+                    Open daily,
+                    10:00 AM – 10:00 PM
+                </p>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h4>
+                    Visit
+                </h4>
+
+                <a href="shops.html">
+                    Shop directory
+                </a>
+
+                <a href="events.html">
+                    Events calendar
+                </a>
+
+                <a href="offers.html">
+                    Current offers
+                </a>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h4>
+                    Company
+                </h4>
+
+                <a href="about.html">
+                    About us
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; City Mall.
+                Directory for demonstration purposes.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+
+        /* =========================
+           GET HTML ELEMENTS
+        ========================= */
+
+        const filterButtons =
+            document.querySelectorAll(".filter-btn");
+
+        const shopCards =
+            document.querySelectorAll(".shop-card");
+
+        const shopGrid =
+            document.getElementById("shopGrid");
+
+        const searchInput =
+            document.getElementById("itemSearch");
+
+        const chips =
+            document.querySelectorAll(".chip");
+
+        const shopCount =
+            document.getElementById("shopCount");
+
+
+        /* =========================
+           SHOW / HIDE SHOP CARDS
+        ========================= */
+
+        function showShops(category = "all", searchText = "") {
+
+            let visibleShops = 0;
+
+            searchText = searchText.toLowerCase().trim();
+
+
+            shopCards.forEach(function(card) {
+
+                const shopCategory =
+                    card.getAttribute("data-category");
+
+                const shopName =
+                    card
+                        .querySelector("h3")
+                        .textContent
+                        .toLowerCase();
+
+                const shopItems =
+                    card
+                        .getAttribute("data-items")
+                        .toLowerCase();
+
+
+                const categoryMatches =
+                    category === "all" ||
+                    shopCategory === category;
+
+
+                const searchMatches =
+                    searchText === "" ||
+                    shopName.includes(searchText) ||
+                    shopItems.includes(searchText);
+
+
+                if (categoryMatches && searchMatches) {
+
+                    card.style.display = "flex";
+
+                    visibleShops++;
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+
+            /* =========================
+               UPDATE SHOP COUNT
+            ========================= */
+
+            shopCount.textContent =
+                visibleShops +
+                (visibleShops === 1 ? " store" : " stores");
+
+
+            /* =========================
+               REMOVE OLD MESSAGE
+            ========================= */
+
+            const oldMessage =
+                document.querySelector(".no-results");
+
+            if (oldMessage) {
+
+                oldMessage.remove();
+
+            }
+
+
+            /* =========================
+               SHOW NO RESULTS MESSAGE
+            ========================= */
+
+            if (visibleShops === 0) {
+
+                const message =
+                    document.createElement("div");
+
+                message.className = "no-results";
+
+                message.textContent =
+                    "No shops were found. Try another search or category.";
+
+                shopGrid.appendChild(message);
+
+            }
+
+        }
+
+
+        /* =========================
+           CATEGORY BUTTONS
+        ========================= */
+
+        filterButtons.forEach(function(button) {
+
+            button.addEventListener("click", function() {
+
+
+                /* Remove active from all buttons */
+
+                filterButtons.forEach(function(btn) {
+
+                    btn.classList.remove("active");
+
+                });
+
+
+                /* Add active to clicked button */
+
+                button.classList.add("active");
+
+
+                /* Get selected category */
+
+                const selectedCategory =
+                    button.getAttribute("data-category");
+
+
+                /* Clear search */
+
+                searchInput.value = "";
+
+
+                /* Show selected shops */
+
+                showShops(selectedCategory, "");
+
+            });
+
+        });
+
+
+        /* =========================
+           SEARCH BOX
+        ========================= */
+
+        searchInput.addEventListener(
+            "input",
+            function() {
+
+                const searchText =
+                    searchInput.value;
+
+
+                /*
+                   When searching, set category
+                   to "all" so every shop is searched.
+                */
+
+                filterButtons.forEach(function(btn) {
+
+                    btn.classList.remove("active");
+
+                });
+
+
+                document
+                    .querySelector(
+                        '.filter-btn[data-category="all"]'
+                    )
+                    .classList.add("active");
+
+
+                showShops("all", searchText);
+
+            }
+        );
+
+
+        /* =========================
+           SEARCH CHIPS
+        ========================= */
+
+        chips.forEach(function(chip) {
+
+            chip.addEventListener(
+                "click",
+                function() {
+
+
+                    /* Get chip search text */
+
+                    const searchValue =
+                        chip.getAttribute("data-search");
+
+
+                    /* Put text inside search box */
+
+                    searchInput.value =
+                        searchValue;
+
+
+                    /* Make All category active */
+
+                    filterButtons.forEach(
+                        function(btn) {
+
+                            btn.classList.remove("active");
+
+                        }
+                    );
+
+
+                    document
+                        .querySelector(
+                            '.filter-btn[data-category="all"]'
+                        )
+                        .classList.add("active");
+
+
+                    /* Search */
+
+                    showShops(
+                        "all",
+                        searchValue
+                    );
+
+
+                    /* Scroll to results */
+
+                    document
+                        .getElementById("shopGrid")
+                        .scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+
+                }
+            );
+
+        });
+
+
+        /* =========================
+           INITIAL PAGE LOAD
+        ========================= */
+
+        showShops("all", "");
+
+
+    </script>
+
+
+</body>
+
+</html>
