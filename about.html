@@ -452,6 +452,101 @@
 
 
         /* =========================
+           VALUES SECTION
+        ========================= */
+
+        .values {
+
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding: 20px 30px 90px;
+        }
+
+
+        .values h2 {
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 40px;
+
+            color: #2b0f1e;
+
+            margin-bottom: 34px;
+        }
+
+
+        .values-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 26px;
+        }
+
+
+        .value-card {
+
+            background-color: #ffffff;
+
+            padding: 28px 26px;
+
+            border-radius: 4px;
+        }
+
+
+        .value-number {
+
+            color: #c9a24b;
+
+            font-family: "Courier New", monospace;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 16px;
+        }
+
+
+        .value-card h3 {
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 20px;
+
+            color: #2b0f1e;
+
+            margin-bottom: 12px;
+        }
+
+
+        .value-card p {
+
+            color: #4f4640;
+
+            font-size: 15px;
+
+            line-height: 1.55;
+        }
+
+
+        @media (max-width: 800px) {
+
+            .values-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+
+        /* =========================
            RESPONSIVE DESIGN
         ========================= */
 
@@ -866,6 +961,83 @@
 
         </div>
 
+
+    </section>
+
+
+
+    <!-- =========================
+         VALUES SECTION
+    ========================= -->
+
+    <section class="values">
+
+        <h2>
+            What we care about
+        </h2>
+
+
+        <div class="values-grid">
+
+
+            <!-- 01 LOCAL FIRST -->
+
+            <div class="value-card">
+
+                <div class="value-number">
+                    01
+                </div>
+
+                <h3>
+                    Local first
+                </h3>
+
+                <p>
+                    Preference goes to independent shops and city-based owners over national chains.
+                </p>
+
+            </div>
+
+
+            <!-- 02 EVERYTHING, NEARBY -->
+
+            <div class="value-card">
+
+                <div class="value-number">
+                    02
+                </div>
+
+                <h3>
+                    Everything, nearby
+                </h3>
+
+                <p>
+                    A deliberate mix of categories, so one trip can cover a birthday gift, groceries, and a movie.
+                </p>
+
+            </div>
+
+
+            <!-- 03 ALWAYS SOMETHING ON -->
+
+            <div class="value-card">
+
+                <div class="value-number">
+                    03
+                </div>
+
+                <h3>
+                    Always something on
+                </h3>
+
+                <p>
+                    A packed events calendar, not just seasonal sales — carnivals, tournaments, and tastings year-round.
+                </p>
+
+            </div>
+
+
+        </div>
 
     </section>
 
