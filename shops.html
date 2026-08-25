@@ -48,18 +48,11 @@
         header {
             background-color: #2b0f1e;
             padding: 15px 30px;
-
-            border-bottom: 1px solid rgba(201, 162, 75, 0.35);
-
-            position: sticky;
-            top: 0;
-            z-index: 100;
         }
 
         nav {
             max-width: 1100px;
             margin: 0 auto;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -67,9 +60,6 @@
 
         .logo {
             color: #f4ede0;
-
-            font-family: Georgia, "Times New Roman", serif;
-
             font-size: 22px;
             font-weight: bold;
         }
@@ -80,34 +70,23 @@
 
         nav ul {
             list-style: none;
-
             display: flex;
             gap: 20px;
         }
 
         nav ul li a {
             color: #e4cf9a;
-
             font-size: 14px;
-
-            padding-bottom: 4px;
-
-            border-bottom: 1px solid transparent;
-
-            transition: 0.2s;
         }
 
         nav ul li a:hover {
-            color: white;
-            border-bottom-color: #c9a24b;
+            color: #ffffff;
+            text-decoration: underline;
         }
 
         nav ul li a.active {
-            color: white;
-
+            color: #ffffff;
             font-weight: bold;
-
-            border-bottom-color: #c9a24b;
         }
 
 
@@ -756,63 +735,22 @@
     ========================= -->
 
     <header>
+    <nav>
+        <div class="logo">
+            CITY <span>MALL</span>
+        </div>
 
-        <nav>
-
-            <div class="logo">
-                CITY <span>MALL</span>
-            </div>
-
-            <ul>
-
-                <li>
-                    <a href="index.html">
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="shops.html" class="active">
-                        Shops
-                    </a>
-                </li>
-
-                <li>
-                    <a href="events.html">
-                        Events
-                    </a>
-                </li>
-
-                <li>
-                    <a href="offers.html">
-                        Offers
-                    </a>
-                </li>
-
-                <li>
-                    <a href="posters.html">
-                        Posters
-                    </a>
-                </li>
-
-                <li>
-                    <a href="about.html">
-                        About Us
-                    </a>
-                </li>
-
-                <li>
-                    <a href="contact.html">
-                        Contact
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html">Shops</a></li>
+            <li><a href="index.html">Events</a></li>
+            <li><a href="index.html">Offers</a></li>
+            <li><a href="index.html">Posters</a></li>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="index.html">Contact</a></li>
+        </ul>
+    </nav>
     </header>
-
 
     <!-- =========================
          HERO SECTION
