@@ -547,6 +547,135 @@
 
 
         /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background-color: #2b0f1e;
+
+            padding: 50px 30px 25px;
+        }
+
+
+        .footer-inner {
+
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: 1.4fr 1fr 1fr;
+
+            gap: 40px;
+        }
+
+
+        .footer-logo {
+
+            color: #f4ede0;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            margin-bottom: 14px;
+        }
+
+
+        .footer-logo span {
+
+            color: #c9a24b;
+        }
+
+
+        .footer-about p {
+
+            color: #d9c9b8;
+
+            font-size: 14px;
+
+            line-height: 1.55;
+        }
+
+
+        .footer-col h4 {
+
+            color: #c9a24b;
+
+            font-size: 15px;
+
+            margin-bottom: 16px;
+        }
+
+
+        .footer-col ul {
+
+            list-style: none;
+        }
+
+
+        .footer-col ul li {
+
+            margin-bottom: 12px;
+        }
+
+
+        .footer-col ul li a {
+
+            color: #d9c9b8;
+
+            font-size: 14px;
+
+            transition: 0.2s;
+        }
+
+
+        .footer-col ul li a:hover {
+
+            color: #ffffff;
+        }
+
+
+        .footer-bottom {
+
+            max-width: 1100px;
+
+            margin: 34px auto 0;
+
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(201, 162, 75, 0.25);
+        }
+
+
+        .footer-bottom p {
+
+            color: #a99a89;
+
+            font-family: "Courier New", monospace;
+
+            font-size: 12px;
+        }
+
+
+        @media (max-width: 800px) {
+
+            .footer-inner {
+
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+
+        }
+
+
+
+        /* =========================
            RESPONSIVE DESIGN
         ========================= */
 
@@ -1040,6 +1169,114 @@
         </div>
 
     </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+
+            <!-- ABOUT / LOGO -->
+
+            <div class="footer-about">
+
+                <div class="footer-logo">
+                    CITY <span>MALL</span>
+                </div>
+
+                <p>
+                    42 Riverside Avenue, Downtown District<br>
+                    Open daily, 10:00 AM &ndash; 10:00 PM
+                </p>
+
+            </div>
+
+
+
+            <!-- VISIT LINKS -->
+
+            <div class="footer-col">
+
+                <h4>
+                    Visit
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="shops.html">
+                            Shop directory
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="events.html">
+                            Events calendar
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="offers.html">
+                            Current offers
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- COMPANY LINKS -->
+
+            <div class="footer-col">
+
+                <h4>
+                    Company
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="about.html">
+                            About us
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; City Mall. Directory for demonstration purposes.
+            </p>
+
+        </div>
+
+    </footer>
 
 
 </body>
