@@ -393,6 +393,65 @@
 
 
         /* =========================
+           HISTORY / TIMELINE SECTION
+        ========================= */
+
+        .history {
+
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding: 20px 30px 90px;
+        }
+
+
+        .history-item {
+
+            display: grid;
+
+            grid-template-columns: 140px 1fr;
+
+            gap: 30px;
+
+            padding: 26px 0;
+
+            border-bottom: 1px solid rgba(43, 15, 30, 0.12);
+        }
+
+
+        .history-item:last-child {
+
+            border-bottom: none;
+        }
+
+
+        .history-year {
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 26px;
+
+            font-weight: bold;
+
+            color: #2b0f1e;
+        }
+
+
+        .history-desc {
+
+            color: #4f4640;
+
+            font-size: 16px;
+
+            line-height: 1.55;
+
+            align-self: center;
+        }
+
+
+
+        /* =========================
            RESPONSIVE DESIGN
         ========================= */
 
@@ -441,6 +500,18 @@
             .about-text {
 
                 max-width: 100%;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .history-item {
+
+                grid-template-columns: 1fr;
+
+                gap: 8px;
             }
 
         }
@@ -721,6 +792,77 @@
 
             </div>
 
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         HISTORY / TIMELINE SECTION
+    ========================= -->
+
+    <section class="history">
+
+
+        <!-- 2004 -->
+
+        <div class="history-item">
+
+            <div class="history-year">
+                2004
+            </div>
+
+            <div class="history-desc">
+                City Mall opens with 14 shops, anchored by the original Silver Thread Jewelers and a single-screen cinema.
+            </div>
+
+        </div>
+
+
+        <!-- 2011 -->
+
+        <div class="history-item">
+
+            <div class="history-year">
+                2011
+            </div>
+
+            <div class="history-desc">
+                Floor 2 is added, bringing arcade games, electronics, and fitness shops into the mix for the first time.
+            </div>
+
+        </div>
+
+
+        <!-- 2018 -->
+
+        <div class="history-item">
+
+            <div class="history-year">
+                2018
+            </div>
+
+            <div class="history-desc">
+                The ground-floor grocery wing opens, turning City Mall into a daily stop rather than a weekend one.
+            </div>
+
+        </div>
+
+
+        <!-- 2026 -->
+
+        <div class="history-item">
+
+            <div class="history-year">
+                2026
+            </div>
+
+            <div class="history-desc">
+                Sixty-two shops, a full events calendar, and an online directory so every visit starts with knowing exactly where to go.
+            </div>
 
         </div>
 
